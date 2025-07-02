@@ -1,5 +1,4 @@
 import React from 'react'
-import useScrollAnimation from './useScrollAnimation'
 
 const languages = [
   "HTML", "CSS", "JavaScript", "Python", "C", "C++"
@@ -18,9 +17,8 @@ const coreSubjects = [
 ]
 
 const Skills = () => {
-  const [skillsRef, skillsClass] = useScrollAnimation('fade-in')
   return (
-    <div ref={skillsRef} className={skillsClass + " py-20 px-4 relative"}>
+    <div className="py-20 px-4 relative">
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">

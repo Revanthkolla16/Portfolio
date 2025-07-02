@@ -1,9 +1,6 @@
 import React from 'react'
-import useScrollAnimation from './useScrollAnimation'
 
 const About = () => {
-  const [leftRef, leftClass] = useScrollAnimation('fade-in-left')
-  const [rightRef, rightClass] = useScrollAnimation('fade-in-right')
   return (
     <div className="py-20 px-4 relative">
       <div className="max-w-6xl mx-auto">
@@ -19,7 +16,7 @@ const About = () => {
 
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Column - Image */}
-          <div ref={leftRef} className={leftClass + " relative"}>
+          <div className="relative">
             <div className="relative z-10">
               <div className="w-80 h-80 mx-auto relative">
                 {/* Glowing border */}
@@ -45,7 +42,7 @@ const About = () => {
           </div>
 
           {/* Right Column - Content */}
-          <div ref={rightRef} className={rightClass + " space-y-6"}>
+          <div className="space-y-6">
             <div className="space-y-4">
               <h3 className="text-2xl font-semibold text-white">
               CS student | Web Development & AI

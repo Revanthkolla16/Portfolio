@@ -1,5 +1,4 @@
 import React from 'react'
-import useScrollAnimation from './useScrollAnimation'
 
 const contactInfo = [
   {
@@ -50,9 +49,8 @@ const socialLinks = [
 ]
 
 const Contact = () => {
-  const [contactRef, contactClass] = useScrollAnimation('fade-in')
   return (
-    <div ref={contactRef} className={contactClass + " min-h-[90vh] flex items-center justify-center"}>
+    <div className="min-h-[90vh] flex items-center justify-center">
       <div className="max-w-5xl mx-auto w-full">
         {/* Section Header */}
         <div className="text-center mb-12">
