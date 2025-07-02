@@ -36,8 +36,8 @@ const Projects = () => {
       image: portfolio,
       technologies: ["React", "Tailwind"],
       category: "frontend",
-      liveUrl: "#",
-      githubUrl: "#",
+      liveUrl: "https://revanthkolla.vercel.app/",
+      githubUrl: "https://github.com/Revanthkolla16/Portfolio",
       featured: false
     }
   ]
