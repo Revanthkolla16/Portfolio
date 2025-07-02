@@ -65,48 +65,98 @@ const Contact = () => {
           </p>
         </div>
 
-        {/* Email & Location Row (no container) */}
-        <div className="flex flex-col sm:flex-row justify-center items-center gap-8 w-full max-w-3xl mx-auto mb-16">
-          {/* Email */}
-          <div className="flex flex-col items-center text-center gap-2">
-            <div className="w-16 h-16 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full flex items-center justify-center text-white mb-2 shadow-lg">
-              {contactInfo[0].icon}
+        {/* Contact Form & Info Row */}
+        <div className="flex flex-col md:flex-row gap-12 mb-16">
+          {/* Contact Form (Left) */}
+          <form className="flex-1 max-w-2xl bg-gray-800/60 rounded-xl p-8 shadow-lg border border-gray-700 mx-auto md:mx-0">
+            <div className="mb-6">
+              <label htmlFor="name" className="block text-gray-300 font-medium mb-2">Name</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                className="w-full px-4 py-3 rounded-lg bg-gray-900/80 border border-gray-700 text-gray-200 focus:outline-none focus:ring-2 focus:ring-cyan-500"
+                placeholder="Your Name"
+                required
+              />
             </div>
-            <h4 className="text-white font-semibold text-lg">{contactInfo[0].title}</h4>
-            <a 
-              href={contactInfo[0].link}
-              className="text-cyan-400 hover:text-cyan-300 transition-colors duration-300 text-base"
+            <div className="mb-6">
+              <label htmlFor="email" className="block text-gray-300 font-medium mb-2">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                className="w-full px-4 py-3 rounded-lg bg-gray-900/80 border border-gray-700 text-gray-200 focus:outline-none focus:ring-2 focus:ring-cyan-500"
+                placeholder="you@example.com"
+                required
+              />
+            </div>
+            <div className="mb-6">
+              <label htmlFor="message" className="block text-gray-300 font-medium mb-2">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                rows={5}
+                className="w-full px-4 py-3 rounded-lg bg-gray-900/80 border border-gray-700 text-gray-200 focus:outline-none focus:ring-2 focus:ring-cyan-500"
+                placeholder="Type your message here..."
+                required
+              ></textarea>
+            </div>
+            <button
+              type="submit"
+              className="w-full py-3 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold text-lg shadow-md hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 cursor-pointer"
+              disabled
             >
-              {contactInfo[0].value}
-            </a>
-          </div>
-          {/* Location */}
-          <div className="flex flex-col items-center text-center gap-2">
-            <div className="w-16 h-16 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full flex items-center justify-center text-white mb-2 shadow-lg">
-              {contactInfo[1].icon}
+              Send Message
+            </button>
+          </form>
+
+          {/* Info & Quick Links (Right) */}
+          <div className="flex-1 flex flex-col justify-center items-center w-full max-w-3xl mx-auto md:mx-0">
+            {/* Email & Location Info */}
+            <div className="flex flex-col sm:flex-row justify-center items-center gap-8 w-full mb-8">
+              {/* Email */}
+              <div className="flex flex-col items-center justify-center gap-2">
+                <div className="w-16 h-16 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full flex items-center justify-center text-white mb-2 shadow-lg">
+                  {contactInfo[0].icon}
+                </div>
+                <h4 className="text-white font-semibold text-lg">{contactInfo[0].title}</h4>
+                <a 
+                  href={contactInfo[0].link}
+                  className="text-cyan-400 hover:text-cyan-300 transition-colors duration-300 text-base"
+                >
+                  {contactInfo[0].value}
+                </a>
+              </div>
+              {/* Location */}
+              <div className="flex flex-col items-center text-center gap-2">
+                <div className="w-16 h-16 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full flex items-center justify-center text-white mb-2 shadow-lg">
+                  {contactInfo[1].icon}
+                </div>
+                <h4 className="text-white font-semibold text-lg">{contactInfo[1].title}</h4>
+                <p className="text-gray-400 text-base">{contactInfo[1].value}</p>
+              </div>
             </div>
-            <h4 className="text-white font-semibold text-lg">{contactInfo[1].title}</h4>
-            <p className="text-gray-400 text-base">{contactInfo[1].value}</p>
+            {/* Quick Links */}
+            <div className="w-full flex flex-col items-center mb-2">
+              <h4 className="text-white font-semibold mb-4 text-lg">Quick links</h4>
+              <div className="flex justify-center gap-6">
+                {socialLinks.map((social, index) => (
+                  <a
+                    key={index}
+                    href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="social-link w-14 h-14 rounded-full flex items-center justify-center bg-gray-800/60 border border-gray-700 text-gray-400 transition-all duration-300 transform hover:scale-110 shadow-md hover:bg-gradient-to-r hover:from-cyan-500 hover:to-blue-600 hover:border-cyan-400 hover:text-white hover:shadow-[0_0_16px_#06b6d4,0_0_32px_#3b82f6]"
+                  >
+                    {social.icon}
+                  </a>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
 
-        {/* Social Links */}
-        <div className="w-full flex flex-col items-center mb-2">
-          <h4 className="text-white font-semibold mb-4 text-lg">Quick links</h4>
-          <div className="flex justify-center gap-6">
-            {socialLinks.map((social, index) => (
-              <a
-                key={index}
-                href={social.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="social-link w-14 h-14 rounded-full flex items-center justify-center bg-gray-800/60 border border-gray-700 text-gray-400 transition-all duration-300 transform hover:scale-110 shadow-md hover:bg-gradient-to-r hover:from-cyan-500 hover:to-blue-600 hover:border-cyan-400 hover:text-white hover:shadow-[0_0_16px_#06b6d4,0_0_32px_#3b82f6]"
-              >
-                {social.icon}
-              </a>
-            ))}
-          </div>
-        </div>
         {/* Copyright */}
         <div className="text-center text-gray-500 my-6 mt-12 text-sm">
           © 2025 Revanth Kolla
