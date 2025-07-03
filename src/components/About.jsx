@@ -1,4 +1,5 @@
 import React from 'react'
+import profilepic from '../assets/Photo.jpg'
 
 const About = () => {
   return (
@@ -24,12 +25,8 @@ const About = () => {
                 
                 {/* Profile image placeholder */}
                 <div className="relative w-full h-full bg-gradient-to-br from-gray-800 to-gray-900 rounded-full border-4 border-cyan-500/30 flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="w-32 h-32 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-full mx-auto mb-4 flex items-center justify-center">
-                      <span className="text-4xl font-bold text-black">RN</span>
-                    </div>
-                    <p className="text-cyan-400 font-semibold">Revanth</p>
-                    <p className="text-gray-400 text-sm">Frontend Developer</p>
+                  <div>
+                    <img src={profilepic} alt="profile" className='rounded-full' />
                   </div>
                 </div>
               </div>
