@@ -1,4 +1,5 @@
 import React from 'react'
+import { useForm } from 'react-hook-form'
 
 const contactInfo = [
   {
@@ -68,48 +69,7 @@ const Contact = () => {
         {/* Contact Form & Info Row */}
         <div className="flex flex-col md:flex-row gap-12 mb-16">
           {/* Contact Form (Left) */}
-          <form className="flex-1 max-w-2xl bg-gray-800/60 rounded-xl p-8 shadow-lg border border-gray-700 mx-auto md:mx-0">
-            <div className="mb-6">
-              <label htmlFor="name" className="block text-gray-300 font-medium mb-2">Name</label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                className="w-full px-4 py-3 rounded-lg bg-gray-900/80 border border-gray-700 text-gray-200 focus:outline-none focus:ring-2 focus:ring-cyan-500"
-                placeholder="Your Name"
-                required
-              />
-            </div>
-            <div className="mb-6">
-              <label htmlFor="email" className="block text-gray-300 font-medium mb-2">Email</label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                className="w-full px-4 py-3 rounded-lg bg-gray-900/80 border border-gray-700 text-gray-200 focus:outline-none focus:ring-2 focus:ring-cyan-500"
-                placeholder="you@example.com"
-                required
-              />
-            </div>
-            <div className="mb-6">
-              <label htmlFor="message" className="block text-gray-300 font-medium mb-2">Message</label>
-              <textarea
-                id="message"
-                name="message"
-                rows={5}
-                className="w-full px-4 py-3 rounded-lg bg-gray-900/80 border border-gray-700 text-gray-200 focus:outline-none focus:ring-2 focus:ring-cyan-500"
-                placeholder="Type your message here..."
-                required
-              ></textarea>
-            </div>
-            <button
-              type="submit"
-              className="w-full py-3 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold text-lg shadow-md hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 cursor-pointer"
-              disabled
-            >
-              Send Message
-            </button>
-          </form>
+          <ContactForm />
 
           {/* Info & Quick Links (Right) */}
           <div className="flex-1 flex flex-col justify-center items-center w-full max-w-3xl mx-auto md:mx-0">
@@ -173,6 +133,64 @@ const Contact = () => {
       `}</style>
     </div>
   )
+}
+
+function ContactForm() {
+  const { register, handleSubmit, formState: { errors, isSubmitting } } = useForm();
+  const onSubmit = data => {
+    alert('Message sent!');
+    console.log(data);
+  };
+
+  return (
+    <form onSubmit={handleSubmit(onSubmit)} className="flex-1 w-full max-w-2xl bg-gray-800/60 rounded-xl p-8 shadow-lg border border-gray-700 mx-auto md:mx-0">
+      <div className="mb-6">
+        <label htmlFor="name" className="block text-gray-300 font-medium mb-2">Name</label>
+        <input
+          id="name"
+          className="w-full px-4 py-3 rounded-lg bg-gray-900/80 border border-gray-700 text-gray-200 focus:outline-none focus:ring-2 focus:ring-cyan-500"
+          placeholder="Your Name"
+          {...register('name', { required: 'Name is required' })}
+        />
+        {errors.name && <p className="text-red-400 text-sm mt-1">{errors.name.message}</p>}
+      </div>
+      <div className="mb-6">
+        <label htmlFor="email" className="block text-gray-300 font-medium mb-2">Email</label>
+        <input
+          id="email"
+          type="email"
+          className="w-full px-4 py-3 rounded-lg bg-gray-900/80 border border-gray-700 text-gray-200 focus:outline-none focus:ring-2 focus:ring-cyan-500"
+          placeholder="you@example.com"
+          {...register('email', {
+            required: 'Email is required',
+            pattern: {
+              value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+              message: 'Enter a valid email address'
+            }
+          })}
+        />
+        {errors.email && <p className="text-red-400 text-sm mt-1">{errors.email.message}</p>}
+      </div>
+      <div className="mb-6">
+        <label htmlFor="message" className="block text-gray-300 font-medium mb-2">Message</label>
+        <textarea
+          id="message"
+          rows={5}
+          className="w-full px-4 py-3 rounded-lg bg-gray-900/80 border border-gray-700 text-gray-200 focus:outline-none focus:ring-2 focus:ring-cyan-500"
+          placeholder="Type your message here..."
+          {...register('message', { required: 'Message is required' })}
+        ></textarea>
+        {errors.message && <p className="text-red-400 text-sm mt-1">{errors.message.message}</p>}
+      </div>
+      <button
+        type="submit"
+        className="w-full py-3 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold text-lg shadow-md hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 cursor-pointer"
+        disabled={isSubmitting}
+      >
+        {isSubmitting ? 'Sending...' : 'Send Message'}
+      </button>
+    </form>
+  );
 }
 
 export default Contact 
