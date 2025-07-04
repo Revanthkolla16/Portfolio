@@ -144,7 +144,7 @@ function ContactForm() {
     setMessage("");
     setMessageType("");
     try {
-      const response = await fetch('http://localhost:3000/api/contact', {
+      const response = await fetch('https://portfolio-api-a7s5.onrender.com/api/contact', {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data)
