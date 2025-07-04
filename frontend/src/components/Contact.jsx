@@ -136,14 +136,38 @@ const Contact = () => {
 }
 
 function ContactForm() {
-  const { register, handleSubmit, formState: { errors, isSubmitting } } = useForm();
-  const onSubmit = data => {
-    alert('Message sent!');
-    console.log(data);
+  const { register, handleSubmit, reset, formState: { errors, isSubmitting } } = useForm();
+  const [message, setMessage] = React.useState("");
+  const [messageType, setMessageType] = React.useState(""); // 'success' or 'error'
+
+  const onSubmit = async (data) => {
+    setMessage("");
+    setMessageType("");
+    try {
+      const response = await fetch('http://localhost:3000/api/contact', {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data)
+      });
+      const result = await response.json();
+      setMessage(result.message);
+      setMessageType(result.success ? "success" : "error");
+      if (result.success) reset();
+    } catch (err) {
+      setMessage("Something went wrong. Please try again later.");
+      setMessageType("error");
+    }
   };
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="flex-1 w-full max-w-2xl bg-gray-800/60 rounded-xl p-8 shadow-lg border border-gray-700 mx-auto md:mx-0">
+      {message && (
+        <div className={`mb-6 px-4 py-3 rounded text-center font-medium shadow transition-all duration-300
+          ${messageType === 'success' ? 'bg-green-600/80 text-white border border-green-400' : 'bg-red-600/80 text-white border border-red-400'}`}
+        >
+          {message}
+        </div>
+      )}
       <div className="mb-6">
         <label htmlFor="name" className="block text-gray-300 font-medium mb-2">Name</label>
         <input
