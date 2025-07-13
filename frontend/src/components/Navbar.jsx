@@ -73,7 +73,7 @@ const Navbar = () => {
                 </button>
               ))}
               <a
-                href={resumeLink}
+                href="/Revanth_Resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-4 py-2 rounded-md text-lg tracking-widest uppercase transition-all duration-300 relative group text-gray-300 hover:text-cyan-400"

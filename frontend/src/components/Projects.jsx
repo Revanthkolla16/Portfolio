@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import portfolio from '../assets/portfolio.png'
+import scribz from '../assets/scribz.png'
+import vaultix from '../assets/vaultix.png'
 
 const Projects = () => {
   const [activeFilter, setActiveFilter] = useState('all')
@@ -7,32 +9,32 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: "Temp",
-      description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
-      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=500&h=300&fit=crop",
-      technologies: ["React", "Node.js", "MongoDB", "Stripe"],
+      title: "Scribz",
+      description: "A modern, beautiful notes app that helps you capture ideas, organize thoughts, and stay productive. Built with the latest technology for a seamless experience.",
+      image: scribz,
+      technologies: ["React", "Express.js", "MongoDB", "Tailwind"],
       category: "fullstack",
-      liveUrl: "#",
-      githubUrl: "#",
-      featured: true
+      liveUrl: "https://scribz.vercel.app/",
+      githubUrl: "https://github.com/Revanthkolla16/Scribz",
+      featured: false
     },
     {
       id: 2,
-      title: "Temp",
-      description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
-      image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=500&h=300&fit=crop",
-      technologies: ["React", "MongoDB", "Tailwind"],
-      category: "frontend",
-      liveUrl: "#",
-      githubUrl: "#",
-      featured: true
+      title: "Vaultix",
+      description: "A straightforward way to store your passwords. Sign up, add your passwords, and access them whenever you need.",
+      image: vaultix,
+      technologies: ["React", "Express.js", "MongoDB", "Tailwind"],
+      category: "fullstack",
+      liveUrl: "https://vaultix-pi.vercel.app/",
+      githubUrl: "https://github.com/Revanthkolla16/Vaultix",
+      featured: false
     },
     {
       id: 3,
       title: "Portfolio Website",
       description: "A modern, responsive portfolio website with smooth animations, dark theme, and optimized performance.",
       image: portfolio,
-      technologies: ["React", "Tailwind"],
+      technologies: ["React", "Tailwind", "Nodemailer"],
       category: "frontend",
       liveUrl: "https://revanthkolla.vercel.app/",
       githubUrl: "https://github.com/Revanthkolla16/Portfolio",
@@ -133,12 +135,14 @@ const Projects = () => {
                 <div className="flex gap-3">
                   <a
                     href={project.liveUrl}
+                    target='_blank'
                     className="flex-1 bg-gradient-to-r from-cyan-500 to-blue-600 text-white text-center py-2 px-4 rounded-lg text-sm font-medium hover:from-cyan-600 hover:to-blue-700 transition-all duration-300"
                   >
                     Live Demo
                   </a>
                   <a
                     href={project.githubUrl}
+                    target='_blank'
                     className="flex-1 border border-gray-700 text-gray-300 text-center py-2 px-4 rounded-lg text-sm font-medium hover:border-cyan-500 hover:text-cyan-400 transition-all duration-300"
                   >
                     GitHub
