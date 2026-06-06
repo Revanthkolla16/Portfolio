@@ -8,42 +8,33 @@ export const personal = {
   leetcodeUser: "Revanth2006",
   avatar: "https://avatars.githubusercontent.com/u/169203664?v=4",
   bio: [
-    `I'm a second-year Computer Science student at <strong>IIITDM Kancheepuram</strong>, driven by a deep passion for the intersection of software engineering and artificial intelligence.`,
-    `My work spans from building <strong>scalable REST APIs with FastAPI</strong> to designing <strong>multi-agent AI systems</strong> using LangGraph, RAG pipelines, and fine-tuned LLMs. I actively solve algorithmic problems on LeetCode and enjoy the elegance of well-structured code.`,
-    `Currently engaged in a <strong>research internship</strong> at IIITDM Kancheepuram, working with the EMBER 2024 malware dataset — applying ML techniques to advance cybersecurity research.`,
+    `I'm a Final-year Computer Science student at IIITDM Kancheepuram with a strong interest in software development, machine learning, deep learning, and modern AI.`,
+    `I enjoy building practical applications, solving algorithmic problems, and exploring how intelligent systems can be applied to real-world challenges. My work spans software development, machine learning, deep learning, LLM-powered applications, and AI agents.`,
+    `Alongside my projects, I've solved 450+ LeetCode problems, sharpening my problem-solving skills and algorithmic thinking. I'm also currently learning Java, object-oriented design, low-level design, system design, and technologies used in modern cloud-native applications, including Docker, AWS, Redis, and Kafka.`,
+    `Currently, I'm working on a research internship using the EMBER 2024 dataset, where I'm experimenting with machine learning models for malware detection and comparative performance analysis, while continuing to deepen my understanding of modern AI and software engineering.`
   ],
 };
 
 export const skills = [
   {
-    icon: "🧠",
-    title: "AI / ML / GenAI",
-    tags: ["LangChain", "LangGraph", "RAG", "LoRA / PEFT", "Groq", "Ollama", "ChromaDB", "LLaVA", "HuggingFace"],
+    title: "Programming Languages",
+    tags: ["C", "C++", "Python", "Java", "SQL"],
   },
   {
-    icon: "⚙️",
-    title: "Backend & APIs",
-    tags: ["FastAPI", "Python", "REST APIs", "Node.js", "WebSockets", "Pydantic"],
+    title: "Development",
+    tags: ["React", "Next.js", "Node.js", "Express", "FastAPI"],
   },
   {
-    icon: "🖥️",
-    title: "Frontend",
-    tags: ["React", "Next.js", "TypeScript", "JavaScript", "HTML / CSS", "Tailwind CSS"],
+    title: "Machine Learning & AI",
+    tags: ["Scikit-learn", "PyTorch", "Transformers", "LangChain", "LangGraph", "RAG"],
   },
   {
-    icon: "🔬",
-    title: "Deep Learning",
-    tags: ["PyTorch", "TensorFlow", "CNNs / RNNs", "Transformers", "Jupyter", "scikit-learn"],
+    title: "Databases",
+    tags: ["MySQL", "PostgreSQL", "SQLite", "MongoDB", "Supabase", "ChromaDB"],
   },
   {
-    icon: "💾",
-    title: "Data & Databases",
-    tags: ["PostgreSQL", "MongoDB", "ChromaDB", "SQLite", "Pandas", "NumPy"],
-  },
-  {
-    icon: "🛠️",
-    title: "Tools & Languages",
-    tags: ["Python", "C++", "JavaScript", "Git", "Docker", "Linux", "Vercel"],
+    title: "Tools & Platforms",
+    tags: ["Git", "GitHub", "Docker", "Postman"],
   },
 ];
 

@@ -9,7 +9,6 @@ const NAV_LINKS = [
   { href: '#projects',   label: 'Projects'   },
   { href: '#education',  label: 'Education'  },
   { href: '#experience', label: 'Experience' },
-  { href: '#leetcode',   label: 'LeetCode'   },
   { href: '#contact',    label: 'Contact'    },
 ];
 

@@ -5,7 +5,6 @@ import About         from '@/components/About';
 import Skills        from '@/components/Skills';
 import Projects      from '@/components/Projects';
 import { Education, Experience } from '@/components/EduExp';
-import LeetCode      from '@/components/LeetCode';
 import Contact, { Footer } from '@/components/ContactFooter';
 
 export default function Page() {
@@ -21,7 +20,6 @@ export default function Page() {
         <Projects />
         <Education />
         <Experience />
-        <LeetCode />
         <Contact />
       </main>
       <Footer />
