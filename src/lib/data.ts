@@ -49,7 +49,7 @@ export const projects = [
   },
   {
     icon: "🤖",
-    name: "GenAI Engineering",
+    name: "GenAI Learning",
     desc: "Hands-on AI engineering — RAG pipelines, tool calling, LangGraph agents, multi-agent workflows, and evaluation pipelines. Built on a fully open/free stack.",
     tech: ["LangGraph", "RAG", "Groq", "Ollama", "ChromaDB", "FastAPI"],
     github: "https://github.com/Revanthkolla16/GenAI-Learning",
@@ -93,9 +93,9 @@ export const education = [
   {
     period: "Aug 2023 — May 2027 (Expected)",
     degree: "B.Tech in Computer Science & Engineering",
-    org: "IIITDM Kancheepuram · Kancheepuram, Tamil Nadu",
-    desc: "Pursuing a rigorous CS curriculum with strong focus on algorithms, data structures, machine learning, and software engineering. Actively engaged in research and project work alongside coursework.",
-    badges: ["DSA", "Machine Learning", "Computer Vision", "Software Engineering", "Digital Image Processing"],
+    org: "IIITDM Kancheepuram",
+    desc: "Rigorous CS program with a focus on core systems, AI, and software engineering. Actively involved in research and hands-on project work.",
+    badges: ["DSA", "OOP", "DBMS", "Computer Networks", "OS", "AI", "Machine Learning", "Image Processing"],
   },
 ];
 
@@ -103,8 +103,8 @@ export const experience = [
   {
     icon: "🔬",
     role: "Research Intern",
-    org: "IIITDM Kancheepuram — Prof. Research Lab",
-    period: "2025 — Present · On-Campus",
+    org: "IIITDM Kancheepuram",
+    period: "May 2026 — Present",
     bullets: [
       "Working on the <strong>EMBER 2024 dataset</strong> — a large-scale malware dataset for cybersecurity research.",
       "Applying machine learning and deep learning techniques to classify and analyze malware samples.",

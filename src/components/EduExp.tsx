@@ -17,7 +17,7 @@ function Badge({ label }: { label: string }) {
 
 function SectionLabel({ n, title, sub }: { n: string; title: string; sub?: string }) {
   return (
-    <div style={{ marginBottom: 64 }}>
+    <div style={{ marginBottom: 32 }}>
       <p style={{
         fontFamily: 'JetBrains Mono, monospace', fontSize: 11, fontWeight: 500,
         letterSpacing: 3, textTransform: 'uppercase', color: 'var(--text-muted)',
@@ -91,20 +91,12 @@ export function Experience() {
               <div style={{
                 background: 'var(--bg-card)', border: '1px solid var(--border)',
                 borderRadius: 20, padding: 36,
-                display: 'grid', gridTemplateColumns: 'auto 1fr', gap: 28,
                 transition: 'all 0.3s', maxWidth: 780,
               }}
                 onMouseEnter={e => { (e.currentTarget as HTMLDivElement).style.borderColor = 'var(--border-hover)'; (e.currentTarget as HTMLDivElement).style.boxShadow = 'var(--shadow-card)'; }}
                 onMouseLeave={e => { (e.currentTarget as HTMLDivElement).style.borderColor = 'var(--border)'; (e.currentTarget as HTMLDivElement).style.boxShadow = 'none'; }}
               >
-                <div style={{
-                  width: 52, height: 52, borderRadius: 14,
-                  background: 'var(--accent-dim)', border: '1px solid var(--border)',
-                  display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  fontSize: 26, flexShrink: 0,
-                }}>
-                  {exp.icon}
-                </div>
+
                 <div>
                   <h3 style={{ fontSize: 20, fontWeight: 700, color: 'var(--text-primary)', marginBottom: 4 }}>
                     {exp.role}
